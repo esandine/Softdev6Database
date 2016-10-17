@@ -20,22 +20,23 @@ c.execute(q)    #run SQL query
 
 for k in d:
     q = "INSERT INTO students VALUES ('"+k["name"]+"', "+k["id"]+")"
+    print q
     c.execute(q)
 
 
 
 q = "CREATE TABLE courses (code TEXT, id INTEGER, mark INTEGER)"
+c.execute(q)
 fObj = open("courses.csv")
 d=csv.DictReader(fObj)
 c.execute(q)    #run SQL query        
 
 for k in d:
-    q = "INSERT INTO courses VALUES ('"+k["code"]+"', "+k["id"]+", "+k["mark"]+")"
+    q = "INSERT INTO courses VALUES ('"+k["name"]+"', "+k["id"]+", "+k["mark"]+")"
     c.execute(q)
 
-q=".tables"
-c.execute(q)    #run SQL query
-#=========================================================
+
+#==========================================================
 db.commit() #save changes
 db.close()  #close database
 
