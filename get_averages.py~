@@ -1,0 +1,18 @@
+import sqlite3   #enable control of an sqlite database
+import csv       #facilitates CSV I/O
+
+
+f="discobandit.db"
+
+db = sqlite3.connect(f) #open if f exists, otherwise create
+c = db.cursor()    #facilitate db ops
+
+#==========================================================
+#INSERT YOUR POPULATE CODE IN THIS ZONE
+#...perhaps by beginning with these examples...
+
+q ="SELECT name, mark FROM students, courses WHERE courses.id=students.id"
+newc = db.execute(q)
+for record in nexc:
+    print record
+
