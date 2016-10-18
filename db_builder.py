@@ -33,8 +33,6 @@ for k in d:
     q = "INSERT INTO courses VALUES ('"+k["code"]+"', "+k["id"]+", "+k["mark"]+")"
     c.execute(q)
 
-q=".tables"
-c.execute(q)    #run SQL query
 #=========================================================
 db.commit() #save changes
 db.close()  #close database
