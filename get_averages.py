@@ -23,9 +23,16 @@ for record in newc:
         r2[record[0]] += record[1]
         d2[record[0]] +=1
 for a in r2.keys():
-    r2[a]/=d2[a]
-    print a
-    print r2[a]
+    r2[a]/= (1.0*d2[a]) 
+    retstr= a 
+    i = 20-len(a)
+    while(i>0):
+        retstr+=" "
+        i-=1
+    retstr+="   "
+    retstr+= (str(r2[a]))
+    print retstr
+
 
     
         

@@ -13,6 +13,29 @@ c = db.cursor()    #facilitate db ops
 
 q ="SELECT name, mark FROM students, courses WHERE courses.id=students.id"
 newc = db.execute(q)
-for record in nexc:
-    print record
+r2 = {}
+d2 = {}
+for record in newc:
+    if record[0] not in r2.keys():
+        r2[record[0]] = record[1]
+        d2[record[0]] = 1
+    else:
+        r2[record[0]] += record[1]
+        d2[record[0]] +=1
+for a in r2.keys():
+    r2[a]/= (1.0*d2[a]) 
+    retstr= a 
+    i = len(a)
+    while(i>0):
+        retstr+=" "
+        i-=1
+    retstr+="   "
+    retstr+= (str(r2[a]))
+    print retstr
+
+
+    
+        
+        
+        
 
